@@ -35,15 +35,17 @@ def update_matrix():
                 if current_range[0] == current_range[1]:
                     api_command += f"{row*16+col-1},{list(current_color)},"
                 else:
-                    api_command += f"{row*16+current_range[0]},{row*16+current_range[1]-1},{list(current_color)},"
+                    api_command += f"{row*16+current_range[0]},{row*16+current_range[1]},{list(current_color)},"
                 current_range = [col, col]
                 current_color = matrix[row][col]
             else:
                 current_range[1] = col
-    if current_range[0] == current_range[1]:
-        api_command += f"{row*16+col},{list(current_color)},"
-    else:
-        api_command += f"{row*16+current_range[0]},{row*16+current_range[1]},{list(current_color)},"
+        if current_range[0] == current_range[1]:
+            api_command += f"{row*16+col},{list(current_color)},"
+        else:
+            api_command += f"{row*16+current_range[0]},{row*16+current_range[1]},{list(current_color)},"
+        current_range = [0, 0]
+        current_color = matrix[row][0]
     print('{"on":true,"bri":100,"seg":{"i":[' + api_command[:-1] + ']}}')
 
 
