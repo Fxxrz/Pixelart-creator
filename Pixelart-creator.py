@@ -25,6 +25,7 @@ def update_canvas():
             canvas.itemconfig(f"rect_{row}_{col}", fill=f"#{matrix[row][col][0]:02x}{matrix[row][col][1]:02x}{matrix[row][col][2]:02x}")
 
 # Funktion, die die Matrix in den API-Befehl konvertiert und ausgibt
+
 def update_matrix():
     api_command = ""
     current_color = matrix[0][0]
@@ -38,15 +39,15 @@ def update_matrix():
                     api_command += f"{row*16+current_range[0]},{row*16+current_range[1]},{list(current_color)},"
                 current_range = [col, col]
                 current_color = matrix[row][col]
-            else:
-                current_range[1] = col
+        # Fügt den aktuellen Farbbereich am Ende der Zeile hinzu
         if current_range[0] == current_range[1]:
             api_command += f"{row*16+col},{list(current_color)},"
         else:
             api_command += f"{row*16+current_range[0]},{row*16+current_range[1]},{list(current_color)},"
-        current_range = [0, 0]
-        current_color = matrix[row][0]
+        current_range = [0, 0]  # Setzt den aktuellen Farbbereich für die nächste Zeile zurück
+    # Gibt den vollständigen API-Befehl aus
     print('{"on":true,"bri":100,"seg":{"i":[' + api_command[:-1] + ']}}')
+
 
 
 # Erstellt das Farbrad und das 16x16-Gitter
