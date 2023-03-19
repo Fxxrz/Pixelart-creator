@@ -17,14 +17,14 @@ A simple GUI tool for creating pixel art and converting it into an API command t
 
 -Install the required libraries by running the following command in the terminal:
 
-<pip install tkinter>
-<pip install tkinter.colorchooser>
+```pip install tkinter```
+```pip install tkinter.colorchooser```
 
 **# Usage**
   
 -Run the script by running the following command in the terminal:
   
-<python pixelart_creator.py>
+```python pixelart_creator.py```
   
 -Use the color picker button to choose a color.
   
