@@ -1,6 +1,7 @@
 import tkinter as tk
 import tkinter.colorchooser as cc
-
+from tkinter import filedialog
+from PIL import Image, ImageTk
 
 # Erstellt eine leere 16x16-Matrix
 matrix = [[(0, 0, 0) for _ in range(16)] for _ in range(16)]
@@ -25,7 +26,6 @@ def update_canvas():
             canvas.itemconfig(f"rect_{row}_{col}", fill=f"#{matrix[row][col][0]:02x}{matrix[row][col][1]:02x}{matrix[row][col][2]:02x}")
 
 # Funktion, die die Matrix in den API-Befehl konvertiert und ausgibt
-
 def update_matrix():
     api_command = ""
     current_color = matrix[0][0]
@@ -45,19 +45,36 @@ def update_matrix():
         else:
             api_command += f"{row*16+current_range[0]},{row*16+current_range[1]},{list(current_color)},"
         current_range = [0, 0]  # Setzt den aktuellen Farbbereich für die nächste Zeile zurück
+
     # Gibt den vollständigen API-Befehl aus
     print('{"on":true,"bri":100,"seg":{"i":[' + api_command[:-1] + ']}}')
 
-
-
 # Erstellt das Farbrad und das 16x16-Gitter
+def choose_image():
+    from tkinter import filedialog
+    from PIL import Image
+
+    file_path = filedialog.askopenfilename()
+    img = Image.open(file_path)
+    img = img.resize((16, 16))
+    pixels = img.load()
+
+    for row in range(16):
+        for col in range(16):
+            matrix[row][col] = tuple(pixels[col, row])
+    update_canvas()
+    update_matrix()
+
+
 root = tk.Tk()
 root.title("Pixelart creator")
 
-color_picker = tk.Button(root, text="Pick color", command=lambda: set_color(0, 0))
-color_picker.pack(side=tk.LEFT)
+choose_image_button = tk.Button(root, text="Choose Image", command=choose_image)
+choose_image_button.pack(side=tk.LEFT)
+
 canvas = tk.Canvas(root, width=260, height=260)
 canvas.pack(side=tk.LEFT)
+
 for row in range(16):
     for col in range(16):
         canvas.create_rectangle(col*16, row*16, col*16+16, row*16+16, fill="#000000", outline="#555", tags=f"rect_{row}_{col}")
