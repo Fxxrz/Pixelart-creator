@@ -1,6 +1,6 @@
 **# Pixelart creator**
 
-A simple GUI tool for creating pixel art and converting it into an API command to control LED strips.
+A simple GUI tool for creating pixel art from jpg files and converting it into an API command to control LED strips.
 
 **# Requirements**
 
@@ -27,9 +27,9 @@ A simple GUI tool for creating pixel art and converting it into an API command t
   
 ```python pixelart_creator.py```
   
--Use the color picker button to choose a color.
+-Use the choose Image button to choose a Image.
   
--Click on a pixel in the grid to color it.
+-Or click on a pixel in the grid to color it.
   
 -The API command will be displayed in the terminal window.
   
