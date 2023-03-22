@@ -1,8 +1,8 @@
-**# Pixelart creator**
+# Pixelart creator
 
 A simple GUI tool for creating pixel art from images and converting it into an API command for WLED.
 
-**# Requirements**
+# Requirements
 
 - Python 3.x
 
@@ -13,7 +13,7 @@ A simple GUI tool for creating pixel art from images and converting it into an A
 - Pillow
 
 
-**# Installation**
+# Installation
 
 - Install Python 3.x from the official website: https://www.python.org/downloads/
 
@@ -25,7 +25,7 @@ A simple GUI tool for creating pixel art from images and converting it into an A
 
 ```pip install Pillow```
 
-**# Usage**
+# Usage
 
 - Run the Exe "Pixelart-creator.exe".
 
@@ -39,7 +39,7 @@ A simple GUI tool for creating pixel art from images and converting it into an A
 
 - paste the API-Command under "API Command"
 
-**## Run the Python scrypt**
+## Run the Python scrypt
   
 - Run the script by running the following command in the terminal:
   
