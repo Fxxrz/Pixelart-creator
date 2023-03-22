@@ -1,6 +1,6 @@
 **# Pixelart creator**
 
-A simple GUI tool for creating pixel art from jpg files and converting it into an API command to control LED strips.
+A simple GUI tool for creating pixel art from images and converting it into an API command for WLED.
 
 **# Requirements**
 
@@ -9,6 +9,8 @@ A simple GUI tool for creating pixel art from jpg files and converting it into a
 -tkinter
 
 -tkinter.colorchooser
+
+-Pillow
 
 
 **# Installation**
@@ -20,8 +22,23 @@ A simple GUI tool for creating pixel art from jpg files and converting it into a
 ```pip install tkinter```
 
 ```pip install tkinter.colorchooser```
+```pip install Pillow```
 
 **# Usage**
+
+-Run the Exe "Pixelart-creator.exe".
+
+- Choose your Image (.jpg; .png).
+
+-Copy the API command.
+
+-create a new Preset in WLED.
+
+-Remove the tick "Use current state"
+
+-paste the API-Command under "API Command"
+
+**##Run the Python scrypt**
   
 -Run the script by running the following command in the terminal:
   
@@ -33,4 +50,10 @@ A simple GUI tool for creating pixel art from jpg files and converting it into a
   
 -The API command will be displayed in the terminal window.
   
--Copy the API command and paste it under Pessets at WLED.
+-Copy the API command.
+
+-create a new Preset in WLED.
+
+-Remove the tick "Use current state"
+
+-paste the API-Command under "API Command"
