@@ -39,7 +39,7 @@ A simple GUI tool for creating pixel art from images and converting it into an A
 
 - paste the API-Command under "API Command"
 
-**##Run the Python scrypt**
+**## Run the Python scrypt**
   
 - Run the script by running the following command in the terminal:
   
