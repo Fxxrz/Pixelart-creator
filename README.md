@@ -22,6 +22,7 @@ A simple GUI tool for creating pixel art from images and converting it into an A
 ```pip install tkinter```
 
 ```pip install tkinter.colorchooser```
+
 ```pip install Pillow```
 
 **# Usage**
