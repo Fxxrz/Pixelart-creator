@@ -1,7 +1,7 @@
 import tkinter as tk
 import tkinter.colorchooser as cc
 from tkinter import filedialog
-from PIL import Image, ImageTk
+from PIL import Image
 
 # Erstellt eine leere 16x16-Matrix
 matrix = [[(0, 0, 0) for _ in range(16)] for _ in range(16)]
@@ -48,11 +48,19 @@ def update_matrix():
 
     # Gibt den vollständigen API-Befehl aus
     print('{"on":true,"bri":100,"seg":{"i":[' + api_command[:-1] + ']}}')
+    api_command = api_command[:-1] 
+    api_command_text.delete('1.0', 'end')
+    api_command_text.insert('1.0', api_command)
+
+
+def copy_api_command():
+    api_command = '{"on":true,"bri":100,"seg":{"i":[' + api_command_text.get('1.0', 'end-1c') + ']}}'
+    root.clipboard_clear()
+    root.clipboard_append(api_command)
+    print("API command copied to clipboard.")
 
 # Erstellt das Farbrad und das 16x16-Gitter
 def choose_image():
-    from tkinter import filedialog
-    from PIL import Image
 
     file_path = filedialog.askopenfilename()
     img = Image.open(file_path)
@@ -71,9 +79,13 @@ root.title("Pixelart creator")
 
 choose_image_button = tk.Button(root, text="Choose Image", command=choose_image)
 choose_image_button.pack(side=tk.LEFT)
+copy_button = tk.Button(root, text="Copy API command", command=copy_api_command)
+copy_button.pack()
 
 canvas = tk.Canvas(root, width=260, height=260)
 canvas.pack(side=tk.LEFT)
+api_command_text = tk.Text(root, height=1)
+api_command_text.pack()
 
 for row in range(16):
     for col in range(16):
