@@ -31,7 +31,7 @@ A simple GUI tool for creating pixel art from images and converting it into an A
 
 - Use the choose Image button to choose a Image (.jpg; .png).
 
--Or click on a pixel in the grid to color it.
+- Or click on a pixel in the grid to color it.
 
 - Copy the API command.
 
