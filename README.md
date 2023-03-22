@@ -29,7 +29,9 @@ A simple GUI tool for creating pixel art from images and converting it into an A
 
 - Run the Exe "Pixelart-creator.exe".
 
-- Choose your Image (.jpg; .png).
+- Use the choose Image button to choose a Image (.jpg; .png).
+
+-Or click on a pixel in the grid to color it.
 
 - Copy the API command.
 
@@ -45,7 +47,7 @@ A simple GUI tool for creating pixel art from images and converting it into an A
   
 ```python pixelart_creator.py```
   
-- Use the choose Image button to choose a Image.
+- Use the choose Image button to choose a Image (.jpg; .png).
   
 - Or click on a pixel in the grid to color it.
   
