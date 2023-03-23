@@ -1,6 +1,6 @@
 # Pixelart creator
 
-A simple GUI tool for creating pixel art from images and converting it into an API command for WLED.
+A simple GUI tool for creating pixel art from images and converting it into an API command for WLED 0.14.x.
 
 # Requirements
 
@@ -35,7 +35,7 @@ A simple GUI tool for creating pixel art from images and converting it into an A
 
 - Copy the API command.
 
-- create a new Preset in WLED.
+- create a new Preset in WLED (version 0.14.x).
 
 - Remove the tick "Use current state"
 
@@ -55,7 +55,7 @@ A simple GUI tool for creating pixel art from images and converting it into an A
   
 - Copy the API command.
 
-- create a new Preset in WLED.
+- create a new Preset in WLED (version 0.14.x).
 
 - Remove the tick "Use current state"
 
