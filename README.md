@@ -8,7 +8,7 @@ A simple GUI tool for creating pixel art from images and converting it into an A
 
 - tkinter
 
-- kinter.colorchooser
+- tkinter.colorchooser
 
 - Pillow
 
